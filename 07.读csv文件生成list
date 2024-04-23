@@ -1,0 +1,18 @@
+import pandas as pd
+
+
+if __name__ == '__main__':
+    user_ids = pd.read_csv('C:/Users/Administrator/Desktop/user_ids.csv', encoding='utf-8', header=None)
+    cids = pd.Series(user_ids.iloc[:, 0])
+    pids = pd.Series(user_ids.iloc[:, 1])
+    uids1 = cids.tolist()
+    uids2 = []
+
+    for pid in pids:
+        if pd.isna(pid):
+            uids2.append(None)
+        else:
+            uids2.append(int(pid))
+    print(uids1)
+    print(uids2)
+    print("feat !")
